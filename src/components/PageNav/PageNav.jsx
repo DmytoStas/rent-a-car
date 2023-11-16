@@ -1,15 +1,15 @@
 import Icon from 'components/Icon';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import css from './PageNav.module.css';
 
 const PageNav = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">
-            <Icon style={{ width: 200, height: 200 }} id={'logo'} />
-          </Link>
-        </li>
+    <nav className={css['nav']}>
+      <NavLink to="/">
+        <Icon style={{ display: 'flex' }} width={160} height={35} id={'logo'} />
+      </NavLink>
+
+      <ul className={css['nav-list']}>
         <li>
           <Link to="/catalog">Catalog</Link>
         </li>

@@ -4,7 +4,7 @@ import Home from 'pages/Home';
 import Catalog from 'pages/Catalog';
 import Favorite from 'pages/Favorite';
 
-import './App.css';
+import './App.module.css';
 
 function App() {
   return (
