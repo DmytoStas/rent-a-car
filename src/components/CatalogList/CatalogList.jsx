@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { useEffect, useMemo, useState } from 'react';
 import Card from 'components/Card';
 
-import css from './CatalogList.module.css';
+// import css from './CatalogList.module.css';
 
 const CatalogList = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -23,6 +23,7 @@ const CatalogList = () => {
 
     let limit = 12;
 
+    setCurrentPage(1); // Remove after develop
     setSearchParams(prewParams => ({
       ...prewParams,
       page: currentPage,

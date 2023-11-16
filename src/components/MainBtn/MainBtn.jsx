@@ -4,7 +4,11 @@ import css from './MainBtn.module.css';
 
 const MainBtn = ({ btnTitle, onMainBtnClick }) => {
   return (
-    <button type="button" onClick={() => onMainBtnClick()}>
+    <button
+      className={css['main-btn']}
+      type="button"
+      onClick={() => onMainBtnClick()}
+    >
       {btnTitle}
     </button>
   );
