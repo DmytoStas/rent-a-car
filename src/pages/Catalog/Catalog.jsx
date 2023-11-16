@@ -1,9 +1,7 @@
+import CatalogList from 'components/CatalogList';
+
 const Catalog = () => {
-  return (
-    <>
-      <p>Catalog page</p>
-    </>
-  );
+  return <CatalogList />;
 };
 
 export default Catalog;

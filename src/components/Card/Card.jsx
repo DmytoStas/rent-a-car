@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import MainBtn from 'components/MainBtn';
 import Icon from 'components/Icon';
+import noImgBg from 'img/No_IMG_BG.png';
 
 import css from './Card.module.css';
 
@@ -22,7 +23,7 @@ const Card = ({ data }) => {
   const [carAddress, setCarAddress] = useState([]);
 
   useEffect(() => {
-    if (!address) {
+    if (address) {
       const splitedAddress = address.split(', ');
       setCarAddress([splitedAddress.slice(-2)]);
     }
@@ -33,8 +34,10 @@ const Card = ({ data }) => {
       <div className={css['img-thumb']}>
         <img
           className={css['img']}
-          src={img}
-          alt={`${make} ${model} ${year}`}
+          src={img ? img : noImgBg}
+          alt={make}
+          loading="lazy"
+          // width="274"
         />
 
         <Icon id={'heart'} />
