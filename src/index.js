@@ -8,7 +8,7 @@ import App from './components/App/App';
 import { store, persistor } from './redux/store';
 
 import './index.css';
-import './utils/fonts';
+import './fonts/fonts';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,9 +1,7 @@
+import FavoriteList from 'components/FavoriteList';
+
 const Favotite = () => {
-  return (
-    <>
-      <p>Favorite page</p>
-    </>
-  );
+  return <FavoriteList />;
 };
 
 export default Favotite;

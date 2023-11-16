@@ -15,14 +15,14 @@ import favoriteReducer from './favorite/favoriteSlice';
 import advertsAPI from './api/advertsAPI';
 
 const favPersistConfig = {
-  key: 'favoriteList',
-  storage: storage,
-  whitelist: ['favorite'],
+  key: 'favorites',
+  storage,
+  whitelist: ['favorites'],
 };
 
 export const store = configureStore({
   reducer: {
-    favorite: persistReducer(favPersistConfig, favoriteReducer),
+    favorites: persistReducer(favPersistConfig, favoriteReducer),
     [advertsAPI.reducerPath]: advertsAPI.reducer,
   },
   middleware: getDefaultMiddleware =>

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Card from 'components/Card';
 
 // import css from './CatalogList.module.css';
+import utils from 'css/utils.module.css';
 
 const CatalogList = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -34,9 +35,9 @@ const CatalogList = () => {
   return (
     <>
       {adverts && (
-        <ul>
+        <ul className={utils['card-list']}>
           {adverts.map(el => (
-            <li key={el.id}>
+            <li className={utils['card-list-item']} key={el.id}>
               <Card data={el} />
             </li>
           ))}

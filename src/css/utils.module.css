@@ -1,0 +1,12 @@
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px 29px;
+}
+
+.card-list-item {
+  flex-basis: calc(
+    100% / var(--number-of-items) -
+      (29px * var(--number-of-gaps) / var(--number-of-items))
+  );
+}
