@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/rent-a-car/static/css/main.682346b7.css",
-    "main.js": "/rent-a-car/static/js/main.e85da35b.js",
+    "main.css": "/rent-a-car/static/css/main.8e02fd97.css",
+    "main.js": "/rent-a-car/static/js/main.08864e62.js",
     "static/media/Montserrat-SemiBold.ttf": "/rent-a-car/static/media/Montserrat-SemiBold.93b37a465fc4ec0d0415.ttf",
     "static/media/Montserrat-Regular.ttf": "/rent-a-car/static/media/Montserrat-Regular.24785cc015b27a3e964b.ttf",
     "static/media/Manrope-SemiBold.ttf": "/rent-a-car/static/media/Manrope-SemiBold.310f108cc524df0e5ffc.ttf",
     "static/media/Manrope-Medium.ttf": "/rent-a-car/static/media/Manrope-Medium.08894ccb04665d1a9d53.ttf",
     "static/media/Manrope-Regular.ttf": "/rent-a-car/static/media/Manrope-Regular.a9b9e09fe6b69741f316.ttf",
-    "static/media/sprite.svg": "/rent-a-car/static/media/sprite.362c9b3b4d9a1460e87e7463d6cb920d.svg",
+    "static/media/sprite.svg": "/rent-a-car/static/media/sprite.cc5e1394b0c4ad1170416f9b88b92bb9.svg",
     "index.html": "/rent-a-car/index.html",
-    "main.682346b7.css.map": "/rent-a-car/static/css/main.682346b7.css.map",
-    "main.e85da35b.js.map": "/rent-a-car/static/js/main.e85da35b.js.map"
+    "main.8e02fd97.css.map": "/rent-a-car/static/css/main.8e02fd97.css.map",
+    "main.08864e62.js.map": "/rent-a-car/static/js/main.08864e62.js.map"
   },
   "entrypoints": [
-    "static/css/main.682346b7.css",
-    "static/js/main.e85da35b.js"
+    "static/css/main.8e02fd97.css",
+    "static/js/main.08864e62.js"
   ]
 }
