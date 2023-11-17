@@ -1,6 +1,7 @@
 import { useGetAdvertsQuery } from 'redux/api/advertsAPI';
 import { useSearchParams } from 'react-router-dom';
 import { useEffect, useMemo, useState } from 'react';
+
 import Card from 'components/Card';
 
 // import css from './CatalogList.module.css';

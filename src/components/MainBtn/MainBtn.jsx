@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 
 import css from './MainBtn.module.css';
 
-const MainBtn = ({ btnTitle, onMainBtnClick }) => {
+const MainBtn = ({ btnTitle, onMainBtnClick, styles }) => {
   return (
     <button
-      className={css['main-btn']}
+      className={`${css['main-btn']} ${styles}`}
       type="button"
       onClick={() => onMainBtnClick()}
     >
@@ -19,4 +19,5 @@ export default MainBtn;
 MainBtn.propTypes = {
   btnTitle: PropTypes.string.isRequired,
   onMainBtnClick: PropTypes.func.isRequired,
+  styles: PropTypes.string,
 };

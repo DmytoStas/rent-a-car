@@ -10,6 +10,9 @@ import TagsList from './components/TagsList';
 import noImgBg from 'img/No_IMG_BG.png';
 
 import css from './Card.module.css';
+import accent from 'css/utils.module.css';
+import Modal from 'components/Modal';
+import extractCarAddress from 'utils/extractCarAddress';
 
 const favBtnVariant = {
   CHECKED: 'checked',
@@ -33,16 +36,11 @@ const Card = ({ data }) => {
   const dispatch = useDispatch();
   const favorites = useSelector(selectFavorite);
 
-  const [carAddress, setCarAddress] = useState([]);
   const [variant, setVariant] = useState(favBtnVariant.NOT_CHECKED);
   const [isAddedToFav, setIsAddedToFav] = useState(false);
+  const [isModalShow, setIsModalShow] = useState(false);
 
-  useEffect(() => {
-    if (address) {
-      const splitedAddress = address.split(', ').slice(-2);
-      setCarAddress(splitedAddress);
-    }
-  }, [address]);
+  const toggleModal = () => setIsModalShow(prev => !prev);
 
   useEffect(() => {
     if (favorites.length !== 0) {
@@ -56,40 +54,61 @@ const Card = ({ data }) => {
     }
   }, [favorites, id, isAddedToFav]);
 
+  useEffect(() => {
+    if (isModalShow) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = '10px';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+      document.body.style.paddingRight = '0px';
+    };
+  }, [isModalShow]);
+
   const handleOnClickFav = () => {
     dispatch(isAddedToFav ? removeFromFav(data) : addToFav(data));
   };
 
   return (
     <>
-      <div className={css['img-thumb']}>
-        <img
-          className={css['img']}
-          src={img ? img : noImgBg}
-          alt={make}
-          loading="lazy"
+      <div className={css['card']}>
+        <div className={css['img-thumb']}>
+          <img
+            className={css['img']}
+            src={img ? img : noImgBg}
+            alt={make}
+            loading="lazy"
+          />
+        </div>
+
+        <div className={css['main-descr-wrap']}>
+          <p className={css['main-descr']}>
+            {`${make} `}
+            <span className={accent['text-accent']}>{`${model}`}</span>
+            {`, ${year}`}
+          </p>
+
+          <p>{rentalPrice}</p>
+        </div>
+
+        <TagsList
+          data={{
+            carAddress: extractCarAddress(address),
+            rentalCompany,
+            type,
+            model,
+            mileage,
+            accessories,
+          }}
         />
+
+        <MainBtn btnTitle="Learn more" onMainBtnClick={toggleModal} />
 
         <button onClick={handleOnClickFav} className={css['fav-btn']}>
           <Icon className={`${css['icon']} ${css[variant]}`} id={'heart'} />
         </button>
       </div>
-
-      <div className={css['main-descr-wrap']}>
-        <p className={css['main-descr']}>
-          {`${make} `}
-          <span className={css['accent']}>{`${model}`}</span>
-          {`, ${year}`}
-        </p>
-
-        <p>{rentalPrice}</p>
-      </div>
-
-      <TagsList
-        data={{ carAddress, rentalCompany, type, model, mileage, accessories }}
-      />
-
-      <MainBtn btnTitle="Learn more" />
+      {isModalShow && <Modal onClose={toggleModal} data={data} />}
     </>
   );
 };

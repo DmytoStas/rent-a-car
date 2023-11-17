@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import css from './TagsList.module.css';
+import css from 'css/utils.module.css';
 
 const TagsList = ({ data }) => {
   const { carAddress, rentalCompany, type, model, mileage, accessories } = data;
@@ -8,7 +8,7 @@ const TagsList = ({ data }) => {
   return (
     <ul className={css['tags-main-list']}>
       <li>
-        <ul className={css['tags-list']}>
+        <ul className={css['card-tags-list']}>
           <li className={css['tags-item']}>
             <p className={css['tag']}>{carAddress[0]}</p>
           </li>
@@ -24,7 +24,7 @@ const TagsList = ({ data }) => {
       </li>
 
       <li>
-        <ul className={css['tags-list']}>
+        <ul className={css['card-tags-list']}>
           <li className={css['tags-item']}>
             <p className={css['tag']}>{type}</p>
           </li>

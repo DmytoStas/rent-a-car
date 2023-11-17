@@ -1,8 +1,10 @@
 :root {
   --body-bg-cl: #21033a;
+  --modal-bg-cl: #300a50;
   --header-bg-cl: #140028;
   --main-txt-cl: #fff;
   --tags-txt-cl: rgba(235, 235, 235, 0.5);
+  --conditions-bg-cl: rgba(136, 135, 135, 0.2);
 
   --accent-cl: #3470ff;
   --accent-hover-cl: #0b44cd;
