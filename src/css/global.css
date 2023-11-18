@@ -1,3 +1,14 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   margin: 0;
   font-family: 'Manrope', sans-serif;
@@ -54,6 +65,10 @@ a {
   display: block;
   color: currentColor;
   text-decoration: none;
+}
+
+a.active {
+  color: var(--accent-cl);
 }
 
 img {

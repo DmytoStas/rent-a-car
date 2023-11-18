@@ -1,8 +1,10 @@
 const genMakesSelectOpt = data => {
-  const optArr = data.map(el => ({
-    value: el,
-    label: el,
-  }));
+  const optArr = [...data]
+    .sort((a, b) => a.localeCompare(b))
+    .map(el => ({
+      value: el,
+      label: el,
+    }));
 
   return [{ label: 'All makers' }, ...optArr];
 };

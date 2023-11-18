@@ -7,6 +7,7 @@ import { paginateCars, scrollSmooth } from 'utils';
 import MainBtn from 'components/MainBtn';
 
 import css from 'css/utils.module.css';
+import NoContentComponent from 'components/NoContentComponent';
 
 const Favotite = () => {
   const favorites = useSelector(selectFavorite);
@@ -41,7 +42,12 @@ const Favotite = () => {
 
   return (
     <>
-      <FavoriteList favCards={cars} />
+      {cars.length !== 0 ? (
+        <FavoriteList favCards={cars} />
+      ) : (
+        <NoContentComponent noContMess={'Sorry, your favorite list is empty'} />
+      )}
+
       {currentPage < totalPages && (
         <MainBtn
           className={css['load-btn']}

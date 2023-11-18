@@ -1,5 +1,5 @@
 import Icon from 'components/Icon';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import css from './PageNav.module.css';
 
 const PageNav = () => {
@@ -11,11 +11,19 @@ const PageNav = () => {
 
       <ul className={css['nav-list']}>
         <li>
-          <Link to="/catalog">Catalog</Link>
+          <NavLink className={css['nav-link']} to="/catalog">
+            Catalog
+          </NavLink>
         </li>
 
         <li>
-          <Link to="/favorites">Favorites</Link>
+          <NavLink
+            activeStyle={{ color: 'red' }}
+            className={css['nav-link']}
+            to="/favorites"
+          >
+            Favorites
+          </NavLink>
         </li>
       </ul>
     </nav>

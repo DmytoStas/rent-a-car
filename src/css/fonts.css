@@ -32,3 +32,10 @@
   font-weight: 600;
   src: url('fonts/Montserrat-SemiBold.ttf');
 }
+
+@font-face {
+  font-family: 'BDSans';
+  font-style: normal;
+  font-weight: 900;
+  src: url('fonts/BDSans-Black.otf');
+}

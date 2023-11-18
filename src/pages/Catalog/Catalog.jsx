@@ -8,16 +8,19 @@ import MainBtn from 'components/MainBtn';
 
 import css from 'css/utils.module.css';
 import toast from 'react-hot-toast';
+import NoContentComponent from 'components/NoContentComponent';
+import Loader from 'components/Loader';
 
 const Catalog = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [limit, setLimit] = useState(9);
   const [totalPages, setTotalPages] = useState(0);
   const [cars, setCars] = useState([]);
+  const [searchFilters, setSearchFilters] = useState({});
   const [isSearch, setIsSearh] = useState(false);
   const [filteredCarsArr, setFilteredCarsArr] = useState([]);
 
-  const { data: allAdverts } = useGetAllAdvertsQuery();
+  const { data: allAdverts, isLoading, isFetching } = useGetAllAdvertsQuery();
 
   useEffect(() => {
     if (!allAdverts) {
@@ -54,6 +57,17 @@ const Catalog = () => {
   };
 
   const handleSearch = ({ make, rentalPrice, from, to }) => {
+    const isSameSearch =
+      make === searchFilters.make &&
+      rentalPrice === searchFilters.rentalPrice &&
+      from === searchFilters.from &&
+      to === searchFilters.to;
+
+    if (isSameSearch) {
+      return;
+    }
+
+    setSearchFilters({ make, rentalPrice, from, to });
     setIsSearh(true);
     const filteredCars = filterCars({
       carsArr: allAdverts,
@@ -62,7 +76,6 @@ const Catalog = () => {
       from,
       to,
     });
-    console.log(filteredCars.length);
 
     if (filteredCars.length > 0) {
       toast(`${filteredCars.length} cars found`, { icon: '🔍' });
@@ -83,7 +96,26 @@ const Catalog = () => {
           limit,
         }}
       />
-      <CatalogList carsData={cars} />
+
+      {isLoading || isFetching ? (
+        <Loader
+          size={15}
+          margin={10}
+          position={{
+            marginTop: '100px',
+            marginLeft: '50%',
+            transform: 'translateX(-50%)',
+            textAlign: 'center',
+          }}
+        />
+      ) : cars.length !== 0 ? (
+        <CatalogList carsData={cars} />
+      ) : (
+        <NoContentComponent
+          noContMess={"Sorry, we couldn't find any vehicles"}
+        />
+      )}
+
       {currentPage < totalPages && (
         <MainBtn
           className={css['load-btn']}

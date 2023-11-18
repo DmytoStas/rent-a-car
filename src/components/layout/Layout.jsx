@@ -1,6 +1,8 @@
 import Container from 'components/Container';
+import Footer from 'components/Footer';
 import HeaderBar from 'components/HeaderBar';
 import IconSprite from 'components/IconSprite';
+import Loader from 'components/Loader';
 import Section from 'components/Section';
 import { Suspense } from 'react';
 import { Toaster } from 'react-hot-toast';
@@ -12,7 +14,20 @@ const Layout = () => {
       <Toaster />
       <IconSprite />
       <HeaderBar />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <Loader
+            size={15}
+            margin={10}
+            position={{
+              marginTop: '100px',
+              marginLeft: '50%',
+              transform: 'translateX(-50%)',
+              textAlign: 'center',
+            }}
+          />
+        }
+      >
         <main>
           <Container>
             <Section>
@@ -21,6 +36,7 @@ const Layout = () => {
           </Container>
         </main>
       </Suspense>
+      <Footer />
     </>
   );
 };

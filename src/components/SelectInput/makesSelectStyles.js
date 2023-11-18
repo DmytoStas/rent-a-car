@@ -109,6 +109,10 @@ const makesSelectsStyles = {
       padding: '4px 0',
     },
   }),
+  loadingIndicator: baseStyles => ({
+    ...baseStyles,
+    color: 'var(--secondary-txt-cl)',
+  }),
 };
 
 export default makesSelectsStyles;
