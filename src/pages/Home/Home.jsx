@@ -1,6 +1,6 @@
-import MainBtn from 'components/MainBtn';
-
+import { Link } from 'react-router-dom';
 import css from './Home.module.css';
+import mainBtnStyle from 'components/MainBtn/MainBtn.module.css';
 
 const Home = () => {
   return (
@@ -11,7 +11,13 @@ const Home = () => {
       <p className={css['hero-descr']}>
         Find the rental car that's right for you
       </p>
-      <MainBtn styles={css['hero-btn']} btnTitle="Go to catalog" />
+
+      <Link
+        to="/catalog"
+        className={`${mainBtnStyle['main-btn']} ${css['hero-btn']}`}
+      >
+        Go to catalog
+      </Link>
     </div>
   );
 };
