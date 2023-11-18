@@ -15,7 +15,7 @@ const RentalConditionsList = ({
     <ul className={css['conditions-list']}>
       {conditionsArr.map(el => {
         if (el.includes('Minimum age:')) {
-          const age = el.replace(/\D/g, '');
+          const age = parseInt(el.replace(/\D/g, ''));
           return (
             <li key={el} className={css['conditions-item']}>
               <p>

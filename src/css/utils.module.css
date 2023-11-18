@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 50px 29px;
+  margin-bottom: 100px;
 }
 
 .card-list-item {
@@ -53,4 +54,20 @@
 
 .text-accent {
   color: var(--accent-cl);
+}
+
+.load-btn {
+  width: 79px;
+  height: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  color: var(--accent-cl);
+  background: none;
+  text-decoration: underline;
+}
+
+.load-btn:hover,
+.load-btn:focus {
+  background: none;
 }

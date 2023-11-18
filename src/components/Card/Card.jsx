@@ -102,7 +102,11 @@ const Card = ({ data }) => {
           }}
         />
 
-        <MainBtn btnTitle="Learn more" onMainBtnClick={toggleModal} />
+        <MainBtn
+          btnTitle="Learn more"
+          onMainBtnClick={toggleModal}
+          styles={css['card-btn']}
+        />
 
         <button onClick={handleOnClickFav} className={css['fav-btn']}>
           <Icon className={`${css['icon']} ${css[variant]}`} id={'heart'} />

@@ -1,7 +1,57 @@
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+
+import { selectFavorite } from 'redux/selectors';
 import FavoriteList from 'components/FavoriteList';
+import { paginateCars, scrollSmooth } from 'utils';
+import MainBtn from 'components/MainBtn';
+
+import css from 'css/utils.module.css';
 
 const Favotite = () => {
-  return <FavoriteList />;
+  const favorites = useSelector(selectFavorite);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [limit, setLimit] = useState(9);
+  const [totalPages, setTotalPages] = useState(0);
+  const [cars, setCars] = useState([]);
+
+  useEffect(() => {
+    if (!favorites) {
+      return;
+    }
+
+    setLimit(12);
+
+    const paginatedCars = paginateCars({
+      arr: favorites,
+      limit,
+      currentPage,
+    });
+    setCars(paginatedCars);
+    setTotalPages(Math.ceil(favorites.length / limit));
+  }, [favorites, currentPage, limit]);
+
+  useEffect(() => {
+    scrollSmooth({ arr: cars, limit });
+  }, [cars, limit]);
+
+  const handleLoadMore = () => {
+    setCurrentPage(prevPage => prevPage + 1);
+  };
+
+  return (
+    <>
+      <FavoriteList favCards={cars} />
+      {currentPage < totalPages && (
+        <MainBtn
+          className={css['load-btn']}
+          onMainBtnClick={handleLoadMore}
+          btnTitle="Load More"
+          styles={css['load-btn']}
+        />
+      )}
+    </>
+  );
 };
 
 export default Favotite;

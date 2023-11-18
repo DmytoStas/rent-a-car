@@ -2,11 +2,16 @@ import PropTypes from 'prop-types';
 
 import css from './MainBtn.module.css';
 
-const MainBtn = ({ btnTitle, onMainBtnClick, styles }) => {
+const MainBtn = ({
+  btnTitle,
+  onMainBtnClick = () => {},
+  styles = '',
+  type = 'button',
+}) => {
   return (
     <button
       className={`${css['main-btn']} ${styles}`}
-      type="button"
+      type={type}
       onClick={() => onMainBtnClick()}
     >
       {btnTitle}
@@ -18,6 +23,6 @@ export default MainBtn;
 
 MainBtn.propTypes = {
   btnTitle: PropTypes.string.isRequired,
-  onMainBtnClick: PropTypes.func.isRequired,
+  onMainBtnClick: PropTypes.func,
   styles: PropTypes.string,
 };

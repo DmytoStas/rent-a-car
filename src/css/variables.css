@@ -2,8 +2,12 @@
   --body-bg-cl: #21033a;
   --modal-bg-cl: #300a50;
   --header-bg-cl: #140028;
+  --select-bg-cl: #f7f7fb;
+
   --main-txt-cl: #fff;
+  --secondary-txt-cl: #121417;
   --tags-txt-cl: rgba(235, 235, 235, 0.5);
+
   --conditions-bg-cl: rgba(136, 135, 135, 0.2);
 
   --accent-cl: #3470ff;
