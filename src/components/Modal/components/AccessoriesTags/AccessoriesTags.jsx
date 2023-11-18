@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import css from 'css/utils.module.css';
 import modalCss from 'components/Modal/Modal.module.css';
 
@@ -29,3 +31,10 @@ const AccessoriesTags = ({ data }) => {
 };
 
 export default AccessoriesTags;
+
+AccessoriesTags.propTypes = {
+  data: PropTypes.shape({
+    accessories: PropTypes.array.isRequired,
+    functionalities: PropTypes.array.isRequired,
+  }).isRequired,
+};

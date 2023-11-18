@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
 import css from './RentalConditionsList.module.css';
@@ -58,3 +59,11 @@ const RentalConditionsList = ({
 };
 
 export default RentalConditionsList;
+
+RentalConditionsList.propTypes = {
+  data: PropTypes.shape({
+    rentalConditions: PropTypes.string.isRequired,
+    mileage: PropTypes.number.isRequired,
+    rentalPrice: PropTypes.string.isRequired,
+  }).isRequired,
+};

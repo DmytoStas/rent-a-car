@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { selectFavorite } from 'redux/selectors';
-import FavoriteList from 'components/FavoriteList';
 import { paginateCars, scrollSmooth } from 'utils';
+import FavoriteList from 'components/FavoriteList';
 import MainBtn from 'components/MainBtn';
+import NoContentComponent from 'components/NoContentComponent';
 
 import css from 'css/utils.module.css';
-import NoContentComponent from 'components/NoContentComponent';
 
 const Favotite = () => {
   const favorites = useSelector(selectFavorite);

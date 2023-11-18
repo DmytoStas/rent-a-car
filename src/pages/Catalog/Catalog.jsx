@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 
 import { useGetAllAdvertsQuery } from 'redux/api/advertsAPI';
 import { filterCars, paginateCars, scrollSmooth } from 'utils';
 import CatalogList from 'components/CatalogList';
 import CatalogFilters from 'components/CatalogFilters';
 import MainBtn from 'components/MainBtn';
-
-import css from 'css/utils.module.css';
-import toast from 'react-hot-toast';
 import NoContentComponent from 'components/NoContentComponent';
 import Loader from 'components/Loader';
+
+import css from 'css/utils.module.css';
 
 const Catalog = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -103,8 +103,8 @@ const Catalog = () => {
           margin={10}
           position={{
             marginTop: '100px',
-            marginLeft: '50%',
-            transform: 'translateX(-50%)',
+            marginLeft: 'auto',
+            marginRight: 'auto',
             textAlign: 'center',
           }}
         />

@@ -25,4 +25,5 @@ MainBtn.propTypes = {
   btnTitle: PropTypes.string.isRequired,
   onMainBtnClick: PropTypes.func,
   styles: PropTypes.string,
+  type: PropTypes.string,
 };

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -147,3 +148,12 @@ const CatalogFilters = ({
 };
 
 export default CatalogFilters;
+
+CatalogFilters.propTypes = {
+  props: PropTypes.shape({
+    setCurrentPage: PropTypes.func.isRequired,
+    handleSearch: PropTypes.func.isRequired,
+    currentPage: PropTypes.number.isRequired,
+    limit: PropTypes.number.isRequired,
+  }).isRequired,
+};

@@ -1,14 +1,10 @@
+import PropTypes from 'prop-types';
 import PulseLoader from 'react-spinners/PulseLoader';
 
-const Loader = ({
-  size = 10,
-  margin = 6,
-  position = {},
-  color = 'var(--main-txt-cl)',
-}) => {
+const Loader = ({ size = 10, margin = 6, position = {} }) => {
   return (
     <PulseLoader
-      color={color}
+      color={'var(--main-txt-cl)'}
       cssOverride={position}
       loading={true}
       size={size}
@@ -20,3 +16,9 @@ const Loader = ({
 };
 
 export default Loader;
+
+Loader.propTypes = {
+  size: PropTypes.number,
+  margin: PropTypes.number,
+  position: PropTypes.object,
+};

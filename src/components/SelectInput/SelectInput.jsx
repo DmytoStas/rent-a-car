@@ -49,11 +49,11 @@ const SelectInput = ({
 
 export default SelectInput;
 
-//Переглянути пропс типи
 SelectInput.propTypes = {
+  inputName: PropTypes.string.isRequired,
   selectOpt: PropTypes.array.isRequired,
   handleSelectChange: PropTypes.func.isRequired,
-  inputName: PropTypes.string.isRequired,
   defaultValue: PropTypes.string.isRequired,
+  isLoading: PropTypes.bool,
   style: PropTypes.object,
 };

@@ -21,8 +21,8 @@ const Layout = () => {
             margin={10}
             position={{
               marginTop: '100px',
-              marginLeft: '50%',
-              transform: 'translateX(-50%)',
+              marginLeft: 'auto',
+              marginRight: 'auto',
               textAlign: 'center',
             }}
           />

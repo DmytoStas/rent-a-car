@@ -17,11 +17,7 @@ const PageNav = () => {
         </li>
 
         <li>
-          <NavLink
-            activeStyle={{ color: 'red' }}
-            className={css['nav-link']}
-            to="/favorites"
-          >
+          <NavLink className={css['nav-link']} to="/favorites">
             Favorites
           </NavLink>
         </li>

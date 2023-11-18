@@ -1,9 +1,13 @@
 import findMaxPrice from './findMaxPrice';
 import findMinPrice from './findMinPrice';
 
+const ROUND_TO = 10;
+
 const genPriceSelectOpt = data => {
-  const maxPrice = Math.ceil((findMaxPrice(data) - 10) / 10) * 10 + 10;
-  const minPrice = Math.ceil((findMinPrice(data) - 10) / 10) * 10 + 10;
+  const maxPrice =
+    Math.ceil((findMaxPrice(data) - ROUND_TO) / ROUND_TO) * ROUND_TO + ROUND_TO;
+  const minPrice =
+    Math.ceil((findMinPrice(data) - ROUND_TO) / ROUND_TO) * ROUND_TO + ROUND_TO;
 
   const result = [];
 

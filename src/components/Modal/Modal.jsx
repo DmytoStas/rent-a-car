@@ -18,13 +18,13 @@ const modalRoot = document.querySelector('#modal-root');
 const Modal = ({ data, onClose }) => {
   const {
     make,
+    img,
     model,
     year,
     rentalPrice,
     address,
     accessories,
     mileage,
-    img,
     description,
     functionalities,
     rentalConditions,

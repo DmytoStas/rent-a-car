@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import css from 'css/utils.module.css';
 import modalCss from 'components/Modal/Modal.module.css';
 
@@ -45,3 +47,14 @@ const MainTags = ({ data }) => {
 };
 
 export default MainTags;
+
+MainTags.propTypes = {
+  data: PropTypes.shape({
+    address: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    year: PropTypes.number.isRequired,
+    type: PropTypes.string.isRequired,
+    fuelConsumption: PropTypes.string.isRequired,
+    engineSize: PropTypes.string.isRequired,
+  }).isRequired,
+};
