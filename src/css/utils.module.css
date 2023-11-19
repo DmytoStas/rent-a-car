@@ -70,4 +70,5 @@
 .load-btn:hover,
 .load-btn:focus {
   background: none;
+  color: var(--accent-hover-cl);
 }
