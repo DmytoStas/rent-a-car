@@ -8,12 +8,12 @@
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 15px;
   margin-left: auto;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.6;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.1px;
 }
 
 .nav-link {
@@ -23,4 +23,23 @@
 .nav-link:hover,
 .nav-link:focus {
   color: var(--accent-cl);
+}
+
+.logo {
+  display: flex;
+  width: 100px;
+  height: 25px;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-list {
+    gap: 30px;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+  }
+
+  .logo {
+    width: 160px;
+    height: 35px;
+  }
 }

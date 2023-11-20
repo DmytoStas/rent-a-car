@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 50px 29px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .card-list-item {
@@ -10,6 +10,24 @@
     100% / var(--number-of-items) -
       (29px * var(--number-of-gaps) / var(--number-of-items))
   );
+}
+
+@media screen and (min-width: 768px) {
+  .card-list {
+    margin-bottom: 80px;
+  }
+
+  .card-list-item {
+    --number-of-items: 2;
+    --number-of-gaps: 1;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .card-list-item {
+    --number-of-items: 4;
+    --number-of-gaps: 3;
+  }
 }
 
 .tags-main-list {

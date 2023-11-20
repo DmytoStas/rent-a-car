@@ -93,52 +93,54 @@ const CatalogFilters = ({
 
   return (
     <form className={css['form']} autoComplete="off" onSubmit={handleSubmit}>
-      <label className={css['label']}>
-        <span className={css['label-txt']}>Car brand</span>
-        <SelectInput
-          inputName="makesCategoty"
-          selectOpt={makesSelOpts}
-          handleSelectChange={handleSelectChange}
-          defaultValue={makesDefSelVal}
-          isLoading={isLoading}
-          styles={makesSelectsStyles}
-        />
-      </label>
-
-      <label className={css['label']}>
-        <span className={css['label-txt']}>Price/ 1 hour</span>
-        <SelectInput
-          inputName="priceFilter"
-          selectOpt={priceSelOpts}
-          handleSelectChange={handleSelectChange}
-          defaultValue={priceDefSelVal}
-          isLoading={isLoading}
-          styles={priceSelectStyles()}
-        />
-      </label>
-
-      <div className={css['label']}>
-        <label className={css['label-txt']} htmlFor="from">
-          Сar mileage / km
+      <div className={css['form-wrap']}>
+        <label className={css['label']}>
+          <span className={css['label-txt']}>Car brand</span>
+          <SelectInput
+            inputName="makesCategoty"
+            selectOpt={makesSelOpts}
+            handleSelectChange={handleSelectChange}
+            defaultValue={makesDefSelVal}
+            isLoading={isLoading}
+            styles={makesSelectsStyles}
+          />
         </label>
-        <div>
-          <input
-            className={`${css['input']} ${css['from']}`}
-            placeholder="From"
-            type="text"
-            name="from"
-            value={fromInput}
-            onChange={handleInputChahge}
-          />
 
-          <input
-            className={`${css['input']} ${css['to']}`}
-            placeholder="To"
-            type="text"
-            name="to"
-            value={toInput}
-            onChange={handleInputChahge}
+        <label className={css['label']}>
+          <span className={css['label-txt']}>Price/ 1 hour</span>
+          <SelectInput
+            inputName="priceFilter"
+            selectOpt={priceSelOpts}
+            handleSelectChange={handleSelectChange}
+            defaultValue={priceDefSelVal}
+            isLoading={isLoading}
+            styles={priceSelectStyles()}
           />
+        </label>
+
+        <div className={css['label']}>
+          <label className={css['label-txt']} htmlFor="from">
+            Сar mileage / km
+          </label>
+          <div className={css['inputs-wrap']}>
+            <input
+              className={`${css['input']} ${css['from']}`}
+              placeholder="From"
+              type="text"
+              name="from"
+              value={fromInput}
+              onChange={handleInputChahge}
+            />
+
+            <input
+              className={`${css['input']} ${css['to']}`}
+              placeholder="To"
+              type="text"
+              name="to"
+              value={toInput}
+              onChange={handleInputChahge}
+            />
+          </div>
         </div>
       </div>
 

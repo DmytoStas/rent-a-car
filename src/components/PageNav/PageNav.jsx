@@ -6,7 +6,7 @@ const PageNav = () => {
   return (
     <nav className={css['nav']}>
       <NavLink to="/">
-        <Icon style={{ display: 'flex' }} width={160} height={35} id={'logo'} />
+        <Icon className={css['logo']} id={'logo'} />
       </NavLink>
 
       <ul className={css['nav-list']}>

@@ -13,10 +13,16 @@
 
   color: var(--tags-txt-cl);
   font-weight: 500;
-  font-size: 14px;
+  font-size: 11px;
   letter-spacing: 1.1px;
 }
 
 .footer-link {
   text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-wrap {
+    font-size: 14px;
+  }
 }

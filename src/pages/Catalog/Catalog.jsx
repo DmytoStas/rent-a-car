@@ -3,6 +3,7 @@ import toast from 'react-hot-toast';
 
 import { useGetAllAdvertsQuery } from 'redux/api/advertsAPI';
 import { filterCars, paginateCars, scrollSmooth } from 'utils';
+import useMediaQuery from 'hooks';
 import CatalogList from 'components/CatalogList';
 import CatalogFilters from 'components/CatalogFilters';
 import MainBtn from 'components/MainBtn';
@@ -22,12 +23,17 @@ const Catalog = () => {
 
   const { data: allAdverts, isLoading, isFetching } = useGetAllAdvertsQuery();
 
+  const isDesktop = useMediaQuery('(min-width: 1440px)');
+
   useEffect(() => {
     if (!allAdverts) {
       return;
     }
 
-    setLimit(12);
+    setLimit(6);
+    if (isDesktop) {
+      setLimit(12);
+    }
 
     if (!isSearch) {
       const paginatedCars = paginateCars({
@@ -46,7 +52,7 @@ const Catalog = () => {
       setCars(paginatedFilteredCars);
       setTotalPages(Math.ceil(filteredCarsArr.length / limit));
     }
-  }, [allAdverts, currentPage, limit, isSearch, filteredCarsArr]);
+  }, [allAdverts, currentPage, limit, isSearch, filteredCarsArr, isDesktop]);
 
   useEffect(() => {
     scrollSmooth({ arr: cars, limit });
