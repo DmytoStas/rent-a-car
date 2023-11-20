@@ -3,6 +3,7 @@
 Test task project
 
 **Technology stack** - [React, JS, CSS modules, Redux, Axios, REST API]
+
 **Feature** - Adaptive design
 
 API Requests are made to the mockapi.io service, where a mini back-end has been
